@@ -1,0 +1,32 @@
+.demo-table {
+    width: 70vw;
+    right: 0;
+    overflow: auto;
+    margin-top: 2%;
+    margin-left: 3%;
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+
+
+  .container {
+    display: flex;
+  }
+
+  .menu {
+    margin-left: 2%;
+    margin-top: 2%;
+  }
+  
+.top-right-button {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+}

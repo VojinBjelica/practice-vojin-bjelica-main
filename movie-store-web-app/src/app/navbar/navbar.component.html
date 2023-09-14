@@ -1,0 +1,18 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <mat-list-item routerLink="customers">
+        <button mat-button>Customers</button>
+      </mat-list-item>
+      <mat-list-item routerLink="movies">
+        <button mat-button>Movies</button>
+      </mat-list-item>
+      <mat-list-item *ngIf="!isCustomerLoggedIn">
+        <button mat-button (click)="login()" >Login</button>
+      </mat-list-item>
+      <mat-list-item *ngIf="isCustomerLoggedIn">
+        <button mat-button (click)="logout()" >Log out</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

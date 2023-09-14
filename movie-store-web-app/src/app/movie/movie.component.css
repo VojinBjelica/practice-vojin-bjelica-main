@@ -1,0 +1,16 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+.card {
+    margin: 1%;
+    width:15vw;
+}
+
+.top-right-button {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+  }

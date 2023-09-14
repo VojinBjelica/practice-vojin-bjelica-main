@@ -1,0 +1,27 @@
+<div class="card-container">
+  <mat-card class="card" *ngFor="let movie of movies">
+    <mat-card-header>
+      <mat-card-title>{{movie.name}}</mat-card-title>
+      <mat-card-subtitle>{{movie.licensingType | enumToString: LicensingType}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-actions>
+      <button mat-icon-button (click)="navigateToEditMovie(movie.id)" *ngIf="isAdmin">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteMovie(movie)" *ngIf="isAdmin">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="movie.licensingType === 1" (click)="purchaseMovie(movie)">
+        <mat-icon>currency_exchange</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="movie.licensingType === 2" (click)="purchaseMovie(movie)">
+        <mat-icon>attach_money</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <button type="button" mat-icon-button class="top-right-button" (click)="navigateToCreateMovie()" *ngIf="isAdmin">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

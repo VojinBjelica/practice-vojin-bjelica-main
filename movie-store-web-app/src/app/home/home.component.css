@@ -1,0 +1,9 @@
+.container {
+    width: 80vw;
+    height:50vh;
+}
+
+.center {
+    margin-left: 15%;
+    padding: 10px;
+}

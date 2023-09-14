@@ -1,0 +1,21 @@
+<form [formGroup]="formGroup" class="example-form" (submit)="saveMovie();">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="formGroup.get('name')?.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-select formControlName="licensingType">
+        <mat-option [value]=1>Two day</mat-option>
+        <mat-option [value]=2>Lifelong</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formGroup.get('licensingType')?.hasError('required')">
+        Licensing type is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <button type="submit"  mat-button>Save</button>
+  </form>

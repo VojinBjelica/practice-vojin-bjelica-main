@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Edit customer</h1>
+<form [formGroup]="formGroup" mat-dialog-content class="example-form" (submit)="onYesClick()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="formGroup.get('email')?.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-select formControlName="role">
+      <mat-option value="1">Regular</mat-option>
+      <mat-option value="2">Admin</mat-option>
+    </mat-select>
+    <mat-error *ngIf="formGroup.get('role')?.hasError('required')">
+      Role is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button type="submit" cdkFocusInitial>Ok</button>
+  </div>
+</form>
